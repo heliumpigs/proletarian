@@ -25,8 +25,8 @@ def trace(fn):
         formatted_args = ", ".join(util.shorten(arg) for arg in args)
         
         if len(kwargs) > 0:
-            formatted_kwargs = "%s=%s" % (util.shorten(key), \
-                util.shorten(value)) for (key, value) in kwargs.iteritems()
+            formatted_kwargs = ("%s=%s" % (util.shorten(k), util.shorten(v)) \
+                for (k, v) in kwargs.iteritems())
             
             formatted_args += ", %s" % ", ".join(formatted_kwargs)
         
